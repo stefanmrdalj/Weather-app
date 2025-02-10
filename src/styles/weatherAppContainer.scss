@@ -1,0 +1,194 @@
+@font-face {
+  font-family: Montserat;
+  src: url("../Fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+@mixin display-flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  padding: 0px !important;
+  margin: 0px;
+  width: 100vw;
+  height: 100vh !important;
+  background: linear-gradient(to bottom right, #48e5b7, #424569);
+  padding-top: 10%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  @include display-flex-center;
+  align-items: center;
+
+  @media (min-width: 601px) {
+    .container {
+      // border: 1px solid white;
+
+      .app-title {
+        @include display-flex-center;
+        font-family: Montserat;
+        color: white;
+        font-size: 2.5rem;
+      }
+      .app-image {
+        // border: 1px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+
+        img {
+          height: 8rem;
+        }
+      }
+      .app-search {
+        @include display-flex-center;
+        align-items: center;
+        // border: 1px solid white;
+
+        input {
+          font-size: 2rem;
+          padding: 10px;
+          padding-left: 20px;
+          border-radius: 35px;
+          border: 2px solid white;
+          background-color: transparent;
+          color: white;
+
+          &::placeholder {
+            color: white;
+          }
+        }
+
+        button {
+          // padding: 0px 25px;
+          border-radius: 50%;
+          font-size: 1.2rem;
+          width: 3.5rem;
+          height: 3.5rem;
+          border: none;
+          margin-left: 5px;
+          background-color: white;
+          color: black;
+        }
+
+        button:hover {
+          background-color: #1e90ff;
+          color: white;
+        }
+      }
+
+      .app-location {
+        @include display-flex-center;
+        font-size: 2rem;
+        color: white;
+        font-family: Montserat;
+        //   border: 1px solid white;
+      }
+
+      .app-temperature {
+        @include display-flex-center;
+        font-size: 2rem;
+        color: white;
+        font-family: Montserat;
+
+        p {
+          margin-right: 20px;
+        }
+      }
+
+      .app-condition {
+        @include display-flex-center;
+        font-size: 2rem;
+        color: white;
+        font-family: Montserat;
+      }
+    }
+  }
+
+  // -------------------------SMALLER SCREENS-------------------------
+
+  @media (max-width: 600px) {
+    .container {
+      .app-title {
+        @include display-flex-center;
+        font-family: Montserat;
+        color: white;
+        font-size: 1.5rem;
+        white-space: nowrap;
+      }
+
+      .app-image {
+        // border: 1px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+
+        img {
+          height: 6rem;
+        }
+      }
+      .app-search {
+        @include display-flex-center;
+        align-items: center;
+        // border: 1px solid white;
+
+        input {
+          font-size: 1rem;
+          padding: 10px;
+          padding-left: 20px;
+          border-radius: 35px;
+          border: 2px solid white;
+          background-color: transparent;
+          color: white;
+
+          &::placeholder {
+            color: white;
+          }
+        }
+        button {
+          // padding: 0px 25px;
+          border-radius: 50%;
+          font-size: 1rem;
+          width: 2.5rem;
+          height: 2.5rem;
+          border: none;
+          margin-left: 5px;
+          background-color: white;
+          color: black;
+        }
+
+        button:hover {
+          background-color: #1e90ff;
+          color: white;
+        }
+      }
+      .app-location {
+        @include display-flex-center;
+        font-size: 1.5rem;
+        color: white;
+        font-family: Montserat;
+        //   border: 1px solid white;
+      }
+
+      .app-temperature {
+        @include display-flex-center;
+        font-size: 1.2rem;
+        color: white;
+        font-family: Montserat;
+
+        p {
+          margin-right: 20px;
+        }
+      }
+
+      .app-condition {
+        @include display-flex-center;
+        font-size: 1.2rem;
+        color: white;
+        font-family: Montserat;
+      }
+    }
+  }
+}
