@@ -13,10 +13,11 @@ const WeatherAppContainer = observer(() => {
 
   const handleSearch = () => {
     if (city.trim() === "") {
-      weatherStore.setError("Please select a city");
+      weatherStore.setError("Please select a city.");
+      weatherStore.weatherData = null;
       return;
     }
-
+    weatherStore.setError("");
     weatherStore.setCity(city);
     weatherStore.getWeatherByCity();
   };
@@ -58,6 +59,9 @@ const WeatherAppContainer = observer(() => {
           placeholder="Search for a City"
           value={city || ""}
           onChange={(e) => setCity(e.target.value)}
+          onKeyDown={(e) => {
+            e.key === "Enter" && handleSearch();
+          }}
         />
         <button onClick={handleSearch}>
           <FaMagnifyingGlass />
@@ -96,6 +100,10 @@ const WeatherAppContainer = observer(() => {
       <div className="app-condition">
         <p>{weatherStore.weatherData?.weather?.[0]?.description}</p>
       </div>
+
+      {weatherStore.error && (
+        <div className="app-error">{weatherStore.error}</div>
+      )}
     </div>
   );
 });
