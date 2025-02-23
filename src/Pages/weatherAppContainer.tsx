@@ -7,6 +7,7 @@ import cloudsImage from "../images/cloud.png";
 import sunnyImage from "../images/sun.png";
 import snowImage from "../images/snow.png";
 import fogImage from "../images/fog.png";
+import rainImage from "../images/rain.png";
 
 const WeatherAppContainer = observer(() => {
   const [city, setCity] = useState("");
@@ -40,6 +41,10 @@ const WeatherAppContainer = observer(() => {
 
     if (description.includes("fog")) {
       return <img src={fogImage} alt="mist" />;
+    }
+
+    if (description.includes("rain")) {
+      return <img src={rainImage} alt="rain" />;
     }
 
     return null;
